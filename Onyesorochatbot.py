@@ -1,10 +1,10 @@
 import streamlit as st
 import google.generativeai as palm
 from dotenv import load_dotenv
-from google.oauth2 import service_account
+import os
 load_dotenv('.env')
 
-credentials = service_account.Credentials.from_service_account_file("GOOGLE_APPLICATION_CREDENTIALS")
+credentials= os.environ.get("GOOGLE_APPLICATION_CREDENTIALS")
 palm.configure(credentials=credentials)
 
 model= palm.GenerativeModel(model_name="gemini-pro")
