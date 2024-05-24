@@ -4,8 +4,8 @@ from dotenv import load_dotenv
 import os
 load_dotenv('.env')
 
-credentials= os.environ.get("GOOGLE_APPLICATION_CREDENTIALS")
-palm.configure(credentials=credentials)
+API_KEY=os.environ.get("PALM_API_KEY")
+palm.configure(api_key=API_KEY)
 
 model= palm.GenerativeModel(model_name="gemini-pro")
 
